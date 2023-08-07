@@ -1,33 +1,42 @@
-
 import Restaurant from "./restaurant";
 import { useState } from "react";
 import resData from "../utils/mockData";
 
-const Body =()=>{
-const [ListOfRestaurants, setListOfRestaurants]= useState(resData);
+function filterData (searchtext,restarent){
+    const filterdata=restarent.filter((restaurant)=>
+    restaurant.data.name.includes(searchtext)
+    );
+    return filterdata;
+}
 
-//console.log(ListOfRestaurants);
+const Body =()=>{
+const [ListOfRestaurant, setListOfRestaurants]= useState(resData);
+const [searchtext,setSearchtext] = useState("");
+const [restarent,setRestarent] = useState(resData);
+
+// console.log(ListOfRestaurants);
   return(
-        <div className="body">
-            <div className="filter">
-                <button className="filter-btn" 
+    <>
+        <div className="search-icon">
+        <input type="text" className="search-input" placeholder="search..."  value={searchtext}
+        onChange={(e)=>setSearchtext(e.target.value)} />
+  <button onClick={()=>{ 
+            const resData= filterData(searchtext,restarent);
+          setRestarent(resData);
+        }}>search</button>
+                    <button className="filter-btn" 
                 onClick={()=>{
-                const filteredList = ListOfRestaurants.filter(
-                        (res)=>res.data.avgRating >= 3.5);
+                const filteredList = ListOfRestaurant.filter(
+                        (res)=>res.data.avgRating >= 4.0);
                        // console.log(ListOfRestaurants);
                    setListOfRestaurants(filteredList);
-                }}
-                >
-                    Top Rated Restaurants 
-                </button>
-            </div>
+                }}>filter top rated restaurants</button>
             <div className="res-container">
-            {ListOfRestaurants.map((restaurant)=>(
-            <Restaurant key={restaurant.data.id} resData={restaurant}/>
+            {ListOfRestaurant.map((restaurant)=>(
+            <Restaurant {...restaurant.data}  key={restaurant.data.name}/>
             ) ) }
-            </div>
-        </div>
+            </div>   
+            </div>     
+        </>
     )};
-
-
 export default Body;

@@ -1,15 +1,15 @@
 import {CDN_URL} from '../utils/constant';
 
-const Restaurant=(probs)=>{
-    const {resData}=probs;{
-    const{
-        cloudinaryImageId,
-        name,
-        cuisine,
-        avgRating,
-        costForTwo,
-        delivaryTime,
-    }=resData?.data;
+const Restaurant=({
+    cloudinaryImageId,
+    name,
+    cuisine,
+    avgRating,
+    costForTwo,
+    delivaryTime,
+})=>{
+    // const {resData}=props;{
+    // const=resData?.data;
     return(
         <div className="res-card">
             
@@ -24,7 +24,5 @@ const Restaurant=(probs)=>{
             <h5>{delivaryTime}minutes</h5>
         </div>
     )
-}
 };
-
 export default Restaurant;
