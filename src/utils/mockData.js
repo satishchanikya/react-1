@@ -141,7 +141,7 @@ const resData = [
         },
         "subtype": "basic"
     },
-    {
+       {
         "type": "restaurant",
         "data": {
             "type": "F",

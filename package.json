@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "satish chanikya",
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -23,13 +23,16 @@
   "homepage": "https://github.com/satishchanikya/react-1#readme",
   "devDependencies": {
     "parcel": "^2.8.3",
-    "process": "^0.11.10"
+    "postcss": "^8.4.27",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.3"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 versions"
   ]
 }

@@ -1,4 +1,5 @@
 import { LOGO_URL } from '../utils/constant';
+import React from 'react';
 
 export const Header=()=>{
     return (
@@ -7,7 +8,7 @@ export const Header=()=>{
             <img className="logo"
               src={LOGO_URL} />
           </div>
-        <div className="nav-items">
+          <div className="nav-items">
           <ul>
               <li>Home</li>
               <li>about us</li>
